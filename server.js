@@ -22,7 +22,7 @@ db.connect((err) => {
 
 // Question 1 Create a GET endpoint that retrieves all patients and displays their:patient_id,first_name,last_name,date_of_birth
 
-app.get('', (req, res) => {
+app.get('/get-patients', (req, res) => {
     const getPatients = "SELECT patient_id, first_name, last_name, date_of_birth  FROM PATIENTS"
     db.query(getPatients, (err, data) => {
         if(err){
@@ -33,7 +33,7 @@ app.get('', (req, res) => {
 
 // Question 2 Create a GET endpoint that displays all providers with their: first_name, last_name,provider_specialty
 
-app.get('', (req, res) => {
+app.get('/get-providers', (req, res) => {
     const getProviders = "SELECT first_name, last_name,provider_specialty FROM PROVIDERS"
     db.query(getProviders, (err, data) => {
         if(err){
@@ -43,7 +43,7 @@ app.get('', (req, res) => {
 
 // Question 3 Create a GET endpoint that retrieves all patients by their first name
 
-app.get('', (req, res) => {
+app.get('/get-patients', (req, res) => {
     const getPatients = "SELECT first_name  FROM PATIENTS"
     db.query(getPatients, (err, data) => {
         if(err){
@@ -53,7 +53,7 @@ app.get('', (req, res) => {
 
 // Question 4 Create a GET endpoint that retrieves all providers by their specialty
 
-app.get('', (req, res) => {
+app.get('/get-providers', (req, res) => {
     const getProviders = "SELECT provider_specialty FROM PROVIDERS"
     db.query(getProviders, (err, data) => {
         if(err){
